@@ -50,7 +50,7 @@ const displayPhones = (phones, dataLimit) => {
     toggleSpinner(false);
 };
 
-// processSearch....
+//..................... processSearch.....................
 const processSearch = (dataLimit) => {
     toggleSpinner(true);
     const searchField = document.getElementById('search-field');
@@ -58,14 +58,14 @@ const processSearch = (dataLimit) => {
     loadPhones(searchText, dataLimit)
 };
 
-// handle search button click...
+// ................handle search button click.................
 document.getElementById('btn-search').addEventListener('click', function () {
     // start loader...
     processSearch(10)
     
 });
 
-// search input field enter key handler....
+//..................... search input field enter key handler....................
 document.getElementById('search-field').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         processSearch(10);
@@ -83,11 +83,13 @@ const toggleSpinner = isLoading => {
 
 };
 
-// not the best way to load shaw all btn...
+// .............not the best way to load shaw all btn.......................
 document.getElementById('btn-shaw-all').addEventListener('click', function () {
     processSearch();
 });
 
+
+// ...................phone information for..........................
 const loadPhoneDetails = async id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     const res = await fetch(url);
@@ -108,5 +110,3 @@ const displayPhoneDetails = phone => {
         <p>Sensor: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors[0] : 'no sensor'}</p>
     `;
 };
-
-// loadPhones();
