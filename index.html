@@ -13,10 +13,10 @@
         <h1 class="text-warning text-center mb-3">Welcome my Phone hunter</h1>
     </header>
     <main class="container">
-
-          <section>
-            <div class="mb-3 w-50">
-                <input id="search-field" type="email" class="form-control" id="exampleFormControlInput1"
+          <!-- search field container -->
+          <section class="text-center">
+            <div class="mt-5 justify-content-center align-items-center">
+                <input id="search-field" type="email" class="form-control shadow-lg p-3 mb-3 bg-body rounded" id="exampleFormControlInput1"
                     placeholder="search your phone">
                 <button id="btn-search" class="btn btn-primary mt-4 px-5">Search</button>
             </div>
@@ -25,8 +25,13 @@
         <section>
           <div id="phone-container" class="row row-cols-1 row-cols-md-3 g-4">
           </div>
+
           <div id="no-found-message" class="d-none mt-4">
             <h3 class="text-danger text-center">No phone Found...! Please try a new search.</h3>
+          </div>
+
+          <div id="show-all" class="text-center d-none mt-5">
+            <div class="btn btn-primary">Show All</div>
           </div>
         </section>
 
