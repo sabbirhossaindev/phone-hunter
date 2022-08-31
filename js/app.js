@@ -1,3 +1,4 @@
+//...................... phone container....................
 const loadPhones = async (searchText, dataLimit) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     const res = await fetch(url);
@@ -104,6 +105,7 @@ const displayPhoneDetails = phone => {
     const phoneDetails = document.getElementById('phone-details');
     console.log(phone.mainFeatures.sensors[0]);
     phoneDetails.innerHTML = `
+        <p>Brand: ${phone.brand ? phone.brand : 'No brand'}</p>
         <p>Release Date: ${phone.releaseDate ? phone.releaseDate : 'No Release Date Found'}</p>
         <p>Storage: ${phone.mainFeatures ? phone.mainFeatures.storage : 'No Storage Information '}</p>
         <p>Others: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Information'}</p>
